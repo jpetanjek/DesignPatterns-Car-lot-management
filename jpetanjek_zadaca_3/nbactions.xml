@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>run</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:1.5.0:exec</goal>
+            </goals>
+            <properties>
+                <exec.args>-classpath %classpath jpetanjek.jpetanjek_zadaca_3.IzvorneKlase.Main java -jar jpetanjek_zadaca_1-1.jar -v DZ_1_vozila.txt -l DZ_1_lokacije.txt -c DZ_1_cjenik.txt -k DZ_1_lokacije_kapaciteti.txt -o DZ_1_osobe.txt -t 2020-10-16 08:00:00 -os DZ_2_tvrtka3.txt</exec.args>
+                <exec.executable>java</exec.executable>
+            </properties>
+        </action>
+        <action>
+            <actionName>debug</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:1.5.0:exec</goal>
+            </goals>
+            <properties>
+                <exec.args>-agentlib:jdwp=transport=dt_socket,server=n,address=${jpda.address} -classpath %classpath jpetanjek.jpetanjek_zadaca_1.IzvorneKlase.Main java -jar jpetanjek_zadaca_1-1.jar -v DZ_1_vozila.txt -l DZ_1_lokacije.txt -c DZ_1_cjenik.txt -k DZ_1_lokacije_kapaciteti.txt -o DZ_1_osobe.txt -t 2020-10-16 08:00:00 -os DZ_2_tvrtka3.txt</exec.args>
+                <exec.executable>java</exec.executable>
+                <jpda.listen>true</jpda.listen>
+            </properties>
+        </action>
+        <action>
+            <actionName>profile</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:1.5.0:exec</goal>
+            </goals>
+            <properties>
+                <exec.args>-classpath %classpath jpetanjek.jpetanjek_zadaca_1.IzvorneKlase.Main java -jar jpetanjek_zadaca_1-1.jar -v DZ_1_vozila.txt -l DZ_1_lokacije.txt -c DZ_1_cjenik.txt -k DZ_1_lokacije_kapaciteti.txt -o DZ_1_osobe.txt -t 2020-10-16 08:00:00 -os DZ_2_tvrtka3.txt</exec.args>
+                <exec.executable>java</exec.executable>
+            </properties>
+        </action>
+    </actions>
